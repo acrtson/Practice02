@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 
 
 /**
- * Created by aj on 11-05-16.
+ * Created by Alex Alvarez on 11-05-16.
  */
 public class NewCampaignPage {
     private CampaignData campaignData;

@@ -1,10 +1,7 @@
 package com.jalasoft.selenium.practice02.Utils;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
 /**
- * Created by aj on 10-05-16.
+ * Created by Alex Alvarez on 10-05-16.
  */
 public abstract class Field {
     private final String identifier;
