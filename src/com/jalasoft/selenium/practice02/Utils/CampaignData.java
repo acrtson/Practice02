@@ -8,7 +8,7 @@ import java.util.*;
 public class CampaignData {
     private final Date currentDate;
 
-    private final List<Input> inputs;
+    private final List<InputField> inputFields;
 
     private final List<SelectField> selects;
 
@@ -16,22 +16,22 @@ public class CampaignData {
 
     public CampaignData() {
         currentDate = new Date();
-        inputs = new ArrayList<>();
+        inputFields = new ArrayList<>();
         selects = new ArrayList<>();
         checkboxes = new ArrayList<>();
     }
 
     private void getDataInputField() {
-        inputs.add(new Input("cpn1", "NewCompaigname" + currentDate.getTime()));
-        inputs.add(new Input("cpn5", "5/15/2016"));
-        inputs.add(new Input("cpn6", "5/18/2016"));
-        inputs.add(new Input("cpn8", "3560.50"));
-        inputs.add(new Input("cpn9", "5050.99"));
-        inputs.add(new Input("cpn10", "5100.99"));
-        inputs.add(new Input("cpn11", "35.15"));
-        inputs.add(new Input("cpn13", "99"));
-        inputs.add(new Input("Parent", ""));
-        inputs.add(new Input("cpn4", "This is a description for textAre Description"));
+        inputFields.add(new InputField("cpn1", "NewCompaigname" + currentDate.getTime()));
+        inputFields.add(new InputField("cpn5", "5/15/2016"));
+        inputFields.add(new InputField("cpn6", "5/18/2016"));
+        inputFields.add(new InputField("cpn8", "3560.50"));
+        inputFields.add(new InputField("cpn9", "5050.99"));
+        inputFields.add(new InputField("cpn10", "5100.99"));
+        inputFields.add(new InputField("cpn11", "35.15"));
+        inputFields.add(new InputField("cpn13", "99"));
+        inputFields.add(new InputField("Parent", ""));
+        inputFields.add(new InputField("cpn4", "This is a description for textAre Description"));
     }
 
     private void getDataSelectField() {
@@ -43,9 +43,9 @@ public class CampaignData {
         checkboxes.add(new CheckboxField("cpn16", "Yes"));
     }
 
-    public List<Input> getInputs() {
+    public List<InputField> getInputFields() {
         getDataInputField();
-        return inputs;
+        return inputFields;
     }
 
     public List<SelectField> getSelects() {

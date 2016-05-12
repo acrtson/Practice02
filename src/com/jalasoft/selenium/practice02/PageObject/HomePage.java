@@ -11,7 +11,7 @@ public class HomePage extends Page {
     public HomePage() {
     }
 
-    public CampaignPage goTo(String menuOption){
+    public CampaignPage goTo(String menuOption) {
         WebElement link = pageInstance.getDriver().findElement(By.linkText(menuOption));
         wait.until(ExpectedConditions.visibilityOf(link));
         link.click();

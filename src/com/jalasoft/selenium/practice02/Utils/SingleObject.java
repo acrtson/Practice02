@@ -26,7 +26,7 @@ public class SingleObject {
         return instance;
     }
 
-    public void initDriver(){
+    private void initDriver(){
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get(baseUrl);

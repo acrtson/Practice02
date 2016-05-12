@@ -6,7 +6,7 @@ package com.jalasoft.selenium.practice02.Utils;
 public abstract class Field {
     private final String identifier;
 
-    private final String value;
+    final String value;
 
     public Field(String identifier, String value) {
         this.identifier = identifier;
