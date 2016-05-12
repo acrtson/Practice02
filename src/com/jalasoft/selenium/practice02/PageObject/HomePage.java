@@ -1,20 +1,20 @@
 package com.jalasoft.selenium.practice02.PageObject;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
- * Created by Alex Alvarez on 5/10/2016.
+ * Created by Alex Alvarez on 5/11/2016.
  */
-public class HomePage {
-    private final WebDriver driver;
-
-    public HomePage(WebDriver driver) {
-        this.driver = driver;
+public class HomePage extends Page {
+    public HomePage() {
     }
 
     public CampaignPage goTo(String menuOption){
-        driver.findElement(By.linkText(menuOption)).click();
-        return new CampaignPage(driver);
+        WebElement link = pageInstance.getDriver().findElement(By.linkText(menuOption));
+        wait.until(ExpectedConditions.visibilityOf(link));
+        link.click();
+        return new CampaignPage();
     }
 }

@@ -1,33 +1,32 @@
 package com.jalasoft.selenium.practice02.PageObject;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
 
 /**
- * Created by Alex Alvarez on 5/10/2016.
+ * Created by Alex Alvarez on 5/11/2016.
  */
-public class CampaignPage {
-    private final WebDriver driver;
-    private final NewCampaignPage newCampaignPage;
+public class CampaignPage extends Page {
 
-    public CampaignPage(WebDriver driver) {
-        this.driver = driver;
-        newCampaignPage = new NewCampaignPage(driver);
+    private NewCampaignPage newCampaignPage;
+
+    public CampaignPage() {
+
     }
 
-    public void clickOnNewButton(String buttonId){
-        driver.findElement(By.name(buttonId)).click();
+    public CampaignPage clickOnNewButton(String buttonId){
+        pageInstance.getDriver().findElement(By.name(buttonId)).click();
+        return this;
     }
 
     public void createNewCampaign(){
+        newCampaignPage = new NewCampaignPage();
+
         newCampaignPage.fillInputs();
 
         newCampaignPage.fillSelects();
 
         newCampaignPage.fillCheckboxes();
 
-        driver.findElement(By.name("save")).click();
+        pageInstance.getDriver().findElement(By.name("save")).click();
     }
-
 }
